@@ -10,12 +10,6 @@ console.log(entries)
 
 console.log(entries.length)
 
-const data = {
-    frontend: 'Jorge',
-    backend: 'isablel',
-    design: 'Mir',
-}
-
 const values = Object.values(data)
 console.log(values)
 console.log(values.length)
@@ -34,12 +28,10 @@ const obj = {
 const errorMsg = 'Test Error'
 const helloWorld = () =>{
     return new Promise((resolve,reject) =>{
-        if(false){
-            setTimeout(()=>resolve ('Hello World'), 3000)
-            
-        }else{
-            reject(new Error (errorMsg))
-        }
+        (false)
+            ? setTimeout(()=>resolve ('Hello World'), 3000)
+            : reject(new Error (errorMsg))
+        
     }) 
 }
 
@@ -51,3 +43,15 @@ const HelloAsync = async() =>{
 }
 
 HelloAsync()
+
+
+const anotherFunction = async () =>{
+    try{
+        const hello = await helloWorld()
+        console.log(hello)
+    }catch(error){
+        console.log(error)
+    }
+}
+
+anotherFunction()
